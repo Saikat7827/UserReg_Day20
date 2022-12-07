@@ -58,6 +58,7 @@ public class UserRegistration {
         }
         boolean check = Pattern.matches("^[A-Z]{1}+[!@#$%^&*()_+]{1}+[a-z A-z 0-9]{7,}$", password);
         return check;
+
     }
 
 
