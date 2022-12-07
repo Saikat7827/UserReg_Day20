@@ -10,13 +10,10 @@ public class UserRegistration {
         } else if (name.isEmpty()) {
             throw new UserRegistrationException("Contains Empty value ");
         }
-        boolean check = Pattern.matches("([a-zA-Z0-9-_]{3,})[a-zA-Z0-9.-_]*[@][a-zA-Z0-9]*[a-zA-Z0-9.-_]{3,}[a-zA-Z0-9.-_]*", name);
+        boolean check = Pattern.matches("([a-z]{3,})(.)([a-z]{3,})[@][a-z]{2}(.)([a-z]{2})(.)([a-z]{2})", name);
         return check;
     }
 
-    /**
-     * @param name is use to check pattern for first name
-     * */
     public boolean firstName(String name) throws UserRegistrationException {
         try {
             if (name.isEmpty()) {
@@ -32,9 +29,7 @@ public class UserRegistration {
             throw new UserRegistrationException("Is Null");
         }
     }
-    /**
-     * @param name checks the pattern of last name
-     * */
+
     public boolean lastName(String name) throws UserRegistrationException {
         if (name == null) {
             throw new UserRegistrationException("Contains Null value");
@@ -44,9 +39,6 @@ public class UserRegistration {
         boolean check = Pattern.matches("([A-Z][a-z]{2,})", name);
         return check;
     }
-    /**
-     * @param number checks the number pattern
-     * */
 
     public boolean numberCheck(String number) throws UserRegistrationException {
         if (number == null) {
@@ -57,9 +49,6 @@ public class UserRegistration {
         boolean check = Pattern.matches("[9][1][\s][0-9]{10}", number);
         return check;
     }
-    /**
-     * @param password checks the password pattern
-     * */
 
     public boolean checkPassword(String password) throws UserRegistrationException {
         if (password == null) {

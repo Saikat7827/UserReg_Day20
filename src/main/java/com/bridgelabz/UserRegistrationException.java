@@ -1,18 +1,17 @@
 package com.bridgelabz;
 
 public class UserRegistrationException extends Exception{
-    public String message;// Declaring
+    public String message;
 
     public UserRegistrationException(String messege) {
         if (messege.contains("Null")) {
-            this.message = "NULL_MESSAGE" + ":" + messege;// Initilizing
+            this.message = "NULL_MESSAGE" + ":" + messege;
         } else if (messege.contains("Empty")) {
             this.message =  "EMPTY_MESSAGE" + ":" + messege;
         }
     }
 
     @Override
-    //Exception class Method
     public String getMessage() {
         return message;
     }
