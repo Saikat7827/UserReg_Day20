@@ -56,7 +56,7 @@ public class UserRegistration {
         } else if (password.isEmpty()) {
             throw new UserRegistrationException("Contains Empty value ");
         }
-        boolean check = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9]{8,}[@$!%*?&]{1}$", password);
+        boolean check = Pattern.matches("^[A-Z]{1}+[!@#$%^&*()_+]{1}+[a-z A-z 0-9]{7,}$", password);
         return check;
     }
 
